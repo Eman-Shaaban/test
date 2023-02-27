@@ -9,3 +9,8 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+
+1. Assigned the `candidate` to `TRIVIAL_PARTITION_KEY` to avoid checking if it's undefined in `if` statement.
+2. Moved the hashing part to another function to avoid repeating.
+3. Used `Optional chaining` the `.?` in this part `event?.partitionKey` to avoid another `if` statement and increase readability
+4. Moved the other `if` checks inside the first `if` because the `candidate` will always be `"0"` if there is no event.
